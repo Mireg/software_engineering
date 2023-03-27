@@ -46,7 +46,7 @@ h_rh = 13
 perimeter_rh = a_rh * 4
 field_rh = a_rh * h_rh
 
-output_t = f'Perimeter of the rhombus is equal to {perimeter_rh} and field is equal to {field_rh}.'
+output_rh = f'Perimeter of the rhombus is equal to {perimeter_rh} and field is equal to {field_rh}.'
 
 print(output_s)
 print(output_r)
