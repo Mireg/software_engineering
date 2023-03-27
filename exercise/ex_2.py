@@ -1,3 +1,4 @@
+import numpy
 # square
 
 a_s = 15
@@ -15,5 +16,15 @@ field_r =  a_r * b_r
 
 output_r = f'Perimeter of the rectangle is equal to {perimeter_r} and field is equal to {field_r}.'
 
+#circle
+
+r_c = 7
+perimeter_c = 2 * numpy.pi * r_c
+field_c = numpy.pi * (r_c ** 2)
+
+output_c = f'Perimeter of the circle is equal to {perimeter_c} and field is equal to {field_c}.'
+
 print(output_s)
 print(output_r)
+print(output_c)
+
