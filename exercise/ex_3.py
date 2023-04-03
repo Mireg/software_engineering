@@ -17,12 +17,15 @@ def prostokat(bok_a, bok_b):
 
 # rownoleglobok i romb dla studenta 2
 def rownoleglobok(bok_a, bok_b, wysokosc_a):
-    # TODO
-    return 0, 0
+    obwod = bok_a*2 +bok_b*2
+    pole = bok_a*wysokosc_a
+    return obwod, pole
+
 
 def romb(bok, wysokosc):
-    # TODO
-    return 0, 0
+    obwod = bok*4
+    pole = bok*wysokosc
+    return obwod, pole
 
 # trapez i kolo dla studenta 3
 def trapez(bok_a, bok_b, bok_c, bok_d, wysokosc_a):
