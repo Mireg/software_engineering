@@ -100,3 +100,34 @@ for student in studenci:
     if student.split(" ")[-1].startswith("N"):
         N += 1
 print(f"Liczba studentow na N wynosi: {N}")
+
+# zadanie 1.10
+
+# zmienne ponizej reprezentuja ulozenie punktow na wykresie,
+# do zadania dolaczono takze rysunek pomocniczy
+wykres_1 = [[2, 4], [4, 4], [6, 4]]
+wykres_2 = [[2, 3], [4, 4], [6, 5]]
+wykres_3 = [[2, 3], [4, 3], [5, 4]]
+
+# zbadaj kazdy wykres, czy dla wyznaczonych punktow istnieje funkcja
+# liniowa laczaca punkty
+# jesli sie nie da, to zwroc False
+# jesli sie da, zwroc True
+
+def is_linear(w):
+    left = (w[1][1] - w[0][1]) / (w[1][0] - w[0][0])
+    right = (w[2][1] - w[0][1]) / (w[2][0] - w[0][0])
+    return(left==right)
+    
+wykresy = [wykres_1, wykres_2, wykres_3]
+wyniki = []
+
+for wykres in wykresy:
+    wyniki.append(is_linear(wykres))
+
+for id, w in enumerate(wyniki):
+    if w is True:
+        print(f"Dla punktów na wykresie {id+1} można wyznaczyć funkcję liniową")
+    else:
+        print(f"Dla punktów na wykresie {id+1} nie można wyznaczyć funkcji liniowej")
+
