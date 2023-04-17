@@ -44,15 +44,23 @@ def kolo(promien):
     return obwod, pole
 
 assert trojkat(10, 15, 16, 8) == (41, 40)
-assert trojkat(3, 4, 5, 2.5) == (12, 3.75)
 assert kwadrat(20) == (80, 400)
-assert kwadrat(420) == (1680, 176400)
 assert prostokat(12, 10) == (44, 120)
-assert prostokat(3, 2) == (10, 6)
 assert rownoleglobok(6, 5, 2) == (22, 12)
 assert romb(10, 5) == (40, 50)
+assert trapez(10, 15, 7, 14, 7) == (46, 87.5)
+
+#testy studenta 1
+assert trojkat(3, 4, 5, 2.5) == (12, 3.75)
+assert kwadrat(420) == (1680, 176400)
+assert prostokat(3, 2) == (10, 6)
+
+#testy studenta 2
+assert romb(20, 15) == (80, 300)
+assert rownoleglobok(7, 7, 7) == (28, 49)
 
 #testy studenta 3
-assert trapez(10, 15, 7, 14, 7) == (46, 87.5)
 assert trapez(10,14,8,8,9) == (40, 108) 
 assert kolo(5) == (31.42, 78.54)
+
+
