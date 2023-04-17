@@ -38,9 +38,9 @@ def trapez(bok_a, bok_b, bok_c, bok_d, wysokosc_a):
 
 
 def kolo(promien):
-    obwod = 2 * math.pi * promien
-    pole = math.pi * promien ** 2
-    return 0, 0
+    obwod = round(2 * math.pi * promien, 2)
+    pole = round(math.pi * promien ** 2, 2)
+    return obwod, pole
 
 
 # assert trojkat(10, 15, 16, 8) == (41, 40)
@@ -48,4 +48,7 @@ def kolo(promien):
 # assert prostokat(12, 10) == (44, 120)
 # assert rownoleglobok(6, 5, 2) == (22, 12)
 # assert romb(10, 5) == (40, 50)
-# assert trapez(10, 15, 7, 14, 2) == (45, 25)
+
+assert trapez(10, 15, 7, 14, 7) == (46, 87.5)
+assert trapez(10,14,8,8,9) == (40, 108) 
+assert kolo(5) == (31.42, 78.54)
