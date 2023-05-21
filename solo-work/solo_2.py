@@ -24,7 +24,7 @@ class Kwadrat:
     def pole(self):
         return(pow(self.a))
 
-print('-----------------------------------------------')
+print('--------------------------------------------')
 
 class Student:
     def __init__(self, imie, nazwisko, numer_indeksu):
@@ -56,11 +56,39 @@ class Student:
 # moj_kwadrat = Kwadrat(17)
 # print(f'Mój kwadrat obwód: {moj_kwadrat.obwod()}')
 # print(f'Mój kwadrat pole: {moj_kwadrat.pole()}')
+print('--------------------------------------------')
 
-student_mariusz = Student("Mariusz", "Kowalski", 123456)
-print(student_mariusz)
+# student_mariusz = Student("Mariusz", "Kowalski", 123456)
+# print(student_mariusz)
 
-student_mariusz.dodaj_ocene(4.5)
-student_mariusz.dodaj_ocene(3)
+# student_mariusz.dodaj_ocene(4.5)
+# student_mariusz.dodaj_ocene(3)
 
-print(student_mariusz.zwroc_srednia())
+# print(student_mariusz.zwroc_srednia())
+# 
+
+class Computer:
+    def __init__(self, cpu, gpu, ram, power_supply, power_consumption, tflops, cooling, cost):
+        self.cpu = cpu
+        self.gpu = gpu
+        self.ram = ram
+        self.power_supply = power_supply
+        self.power_consumption = power_consumption
+        self.tflops = tflops
+        self.cooling = cooling
+        self.cost = cost
+
+    def print_spec_sheet(self):
+        print(f'CPU: {self.cpu} \nGPU: {self.gpu} \nMemory: {self.ram}\nPower_supply: {self.power_supply}')
+
+    def calc_efficency(self):
+        return self.tflops / self.power_consumption
+    
+    def calc_perf_per_dollar(self):
+        return self.tflops / self.cost
+    
+comp = Computer('i9-13900k', 'RTX4090', '32GB', 'Seasonic XYZ 1200W', 1000, 100, 'AIO Liquid cooler', 5000)
+
+comp.print_spec_sheet()
+print(f'{comp.calc_efficency()} TFLOPS/W')
+print(f'{comp.calc_perf_per_dollar()} TFLOPS/$')
