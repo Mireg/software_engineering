@@ -6,8 +6,8 @@ class Pracownik:
         self.nazwisko = nazwisko
         self.wynagrodzenie_brutto = wynagrodzenie_brutto
 
-    def __str_(self):
-        return self.imie + self.nazwisko 
+    def __str__(self):
+        return f'{self.imie} {self.nazwisko}'
     
     def oblicz_netto(self):
         skl_em = round(self.wynagrodzenie_brutto * 0.0976, 2)
@@ -27,14 +27,20 @@ class Pracownik:
         koszty = round(self.wynagrodzenie_brutto + skl_em + skl_ren + skl_wyp + skl_FP + skl_FGSP, 2)
         return koszty
 
+#reading csv
 pracownicy_df = pd.read_csv(r'salary.csv')
 pracownicy = []
 
+#creating class instances and appending them to the list
 for index, p in pracownicy_df.iterrows():
     pracownicy.append(Pracownik(p[0],p[1],p[2]))
 
 koszty_wszystkich_pracownikow = 0
 
+#checking self
+print(str(pracownicy[0]))
+
+#printing emp info
 for p in pracownicy:
     print(f"Pracownik {p.imie} {p.nazwisko}: ")
     print(f"- pensja brutto: {round(p.wynagrodzenie_brutto,2)}")
