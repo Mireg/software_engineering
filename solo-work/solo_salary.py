@@ -10,32 +10,30 @@ class Pracownik:
         return self.imie + self.nazwisko 
     
     def oblicz_netto(self):
-        skl_em = self.wynagrodzenie_brutto * 0.0976
-        skl_ren = self.wynagrodzenie_brutto * 0.015
-        skl_chor = self.wynagrodzenie_brutto * 0.0245
-        skl_zdr = (self.wynagrodzenie_brutto * self.wynagrodzenie_brutto - (skl_em + skl_ren + skl_chor)) * 0.09 - 279.58
-        wynagrodzenie_netto = skl_em + skl_ren + skl_chor + skl_zdr
+        skl_em = round(self.wynagrodzenie_brutto * 0.0976, 2)
+        skl_ren = round(self.wynagrodzenie_brutto * 0.015, 2)
+        skl_chor = round(self.wynagrodzenie_brutto * 0.0245, 2)
+        skl_zdr = round((self.wynagrodzenie_brutto - (skl_em + skl_ren + skl_chor)) * 0.09, 2)
+        pit = round(((self.wynagrodzenie_brutto * 12 * 0.12) - 3600)/12)
+        wynagrodzenie_netto = self.wynagrodzenie_brutto - (skl_em + skl_ren + skl_chor + skl_zdr + pit)
         return wynagrodzenie_netto    
     
     def oblicz_koszty(self):
         return 0
 
-pracownicy_pd = pd.read_csv(r'salary.csv')
+pracownicy_df = pd.read_csv(r'salary.csv')
+pracownicy = []
+
+for index, p in pracownicy_df.iterrows():
+    pracownicy.append(Pracownik(p[0],p[1],p[2]))
 
 koszty_wszystkich_pracownikow = 0
 
-# for pracownik in pracownicy:
-#      print(f"Pracownik {pracownik['imie']}: ")
-#     print("- pensja brutto: ")
-#     print("- pensja netto: ")
-#     print("- koszt pracodawcy: ")
-#     print("- koszt całkowity: ")
-
-for index, pracownik in pracownicy.iterrows():
-    print(f"Pracownik {pracownik['imie']} {pracownik['nazwisko']}:")
-    print(f"- pensja brutto: {pracownik['wynagrodzenie_brutto']}")
-#    print(f"- pensja netto: {}")
-#     print("- koszt pracodawcy: ")
-#     print("- koszt całkowity: ")
+for p in pracownicy:
+    print(f"Pracownik {p.imie} {p.nazwisko}: ")
+    print(f"- pensja brutto: {p.wynagrodzenie_brutto}")
+    print(f"- pensja netto: {p.oblicz_netto()}")
+#    print(f"- koszt pracodawcy: ")
+#    print(f"- koszt całkowity: ")
 
 print("Suma kosztów wynosi: xxx")
