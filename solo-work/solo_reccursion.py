@@ -59,14 +59,36 @@ list1 = [1, 1, 1, 2]
 #       f = n * factorial(n-1)
 #       return f
 
-def factorial(n):
+# def factorial(n):
+#     if n == 0:
+#         return 1
+#     else:
+#         return n * factorial(n - 1)
+
+# print(factorial(0))
+# print(factorial(1))
+# print(factorial(2))
+# print(factorial(5))
+
+
+#Fibbonaci
+
+#zwraca n-tą liczbę ciągu fibbonaciego (1, 1, 2, 3, 5, 8...)
+#funkcja fibbonaci(n)
+#   if n == 0
+#       return 0
+#   else if n == 1
+#       return 1
+#   else:
+#       return fibbonaci(n-1) + fibbonaci(n-2)
+
+def F(n):
     if n == 0:
+        return 0
+    elif n == 1:
         return 1
     else:
-        return n * factorial(n - 1)
+        return F(n-1) + F(n-2)
 
-print(factorial(0))
-print(factorial(1))
-print(factorial(2))
-print(factorial(5))
 
+print(f"{F(0)}, {F(1)}, {F(2)}, {F(3)}, {F(4)}, {F(5)}, ... , {F(12)}")
